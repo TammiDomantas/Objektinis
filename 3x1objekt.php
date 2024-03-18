@@ -1,5 +1,6 @@
 <?php
 include'Skaicius.php';
+include'Histograma.php';
 $vienas = $_GET["vienas"];
 $intpirmas = $_GET["intpirmas"];
 $intgalinis = $_GET["intgalinis"];
@@ -25,4 +26,12 @@ echo "</br>";
 echo"Aritmetines progresijos galinis skaicius: ";
 $skaicius1->progresija();
 $skaicius1->progresija_isvedimas();
+echo "</br>";
+echo "Histograma:";
+echo "</br>";
+$histograma1 = new Histograma();
+$histograma1->set($vienas,$intpirmas,$intgalinis,$pirmprog,$n,$skirtumas);
+$histograma1->intervalo_skaiciavimas();
+$histograma1->histogramos_skaiciavimas();
+$histograma1->histogramos_isvedimas();
 ?>
